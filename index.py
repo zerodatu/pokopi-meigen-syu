@@ -9,14 +9,19 @@ templates = Jinja2Templates(directory="templates")
 # IDの説明…https://www.youtube.com/watch?v=xxxxxxxxxとあるとしてxxx..の部分がIDとなります!
 VIDEOS = [
     {
-        "youtube_id": "dQw4w9WgXcQ",  # ← 動画ID
-        "title": "【雑談】〇〇について語る配信",
-        "quote": "あきらめた瞬間に、夢はそこで終わっちゃうんだよ",
+        "youtube_id": "DVxFkC6KV6Y",  # ← 動画ID
+        "title": "【ゲスト大発表】#ぽんぽこ24 ついにタイムスケジュール解禁！！！！",
+        "quote": "柴田理恵",
     },
     {
         "youtube_id": "77Cv6hfeAXo",
         "title": "【超巨大】噂の台湾チキンが食べたいので自作しました！！",
         "quote": "ウマッドMAX→（ホンマ）世紀末やで",
+    },
+    {
+        "youtube_id": "d9BZRH1IZqY",
+        "title": "【ドッキリ】スマブラ中に急に深刻な話したら勝てる説",
+        "quote": "どういうスタンス？ ",
     },
     # 追加していけばどんどん増える
 ]
