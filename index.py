@@ -5,7 +5,8 @@ from fastapi.templating import Jinja2Templates
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
 
-# 🔽 ここにあなた様が推しVTuberの動画リストを追加していく
+# ここに動画IDを載せて追加
+# IDの説明…https://www.youtube.com/watch?v=xxxxxxxxxとあるとしてxxx..の部分がIDとなります!
 VIDEOS = [
     {
         "youtube_id": "dQw4w9WgXcQ",  # ← 動画ID
@@ -13,9 +14,9 @@ VIDEOS = [
         "quote": "あきらめた瞬間に、夢はそこで終わっちゃうんだよ",
     },
     {
-        "youtube_id": "XXXXXXXXXXX",
-        "title": "【歌枠】〇〇歌ってみた",
-        "quote": "今日のあなたが、いちばんかわいい日だよ",
+        "youtube_id": "77Cv6hfeAXo",
+        "title": "【超巨大】噂の台湾チキンが食べたいので自作しました！！",
+        "quote": "ウマッドMAX→（ホンマ）世紀末やで",
     },
     # 追加していけばどんどん増える
 ]
