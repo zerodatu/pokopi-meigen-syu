@@ -57,3 +57,11 @@ async def list_quotes(request: Request):
             "videos": items,
         },
     )
+
+@app.get("/about", response_class=HTMLResponse)
+async def about_page(request: Request):
+    return templates.TemplateResponse(
+        "about.html",
+        {"request": request},
+    )
+
