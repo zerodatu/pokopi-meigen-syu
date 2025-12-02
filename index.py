@@ -1,3 +1,4 @@
+import json
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
@@ -7,26 +8,9 @@ app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
-# ここに動画IDを載せて追加
-# IDの説明…https://www.youtube.com/watch?v=xxxxxxxxxとあるとしてxxx..の部分がIDとなります!
-VIDEOS = [
-    {
-        "youtube_id": "DVxFkC6KV6Y",  # ← 動画ID
-        "title": "【ゲスト大発表】#ぽんぽこ24 ついにタイムスケジュール解禁！！！！",
-        "quote": "柴田理恵",
-    },
-    {
-        "youtube_id": "77Cv6hfeAXo",
-        "title": "【超巨大】噂の台湾チキンが食べたいので自作しました！！",
-        "quote": "ウマッドMAX→（ホンマ）世紀末やで",
-    },
-    {
-        "youtube_id": "d9BZRH1IZqY",
-        "title": "【ドッキリ】スマブラ中に急に深刻な話したら勝てる説",
-        "quote": "どういうスタンス？ ",
-    },
-    # 追加していけばどんどん増える
-]
+# videos.jsonから動画データを読み込む
+with open("videos.json", "r", encoding="utf-8") as f:
+    VIDEOS = json.load(f)
 
 
 def youtube_thumb(video_id: str) -> str:
@@ -66,4 +50,3 @@ async def about_page(request: Request):
         "about.html",
         {"request": request},
     )
-
