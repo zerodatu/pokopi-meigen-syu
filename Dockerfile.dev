@@ -1,0 +1,12 @@
+FROM python:3.14-rc-slim
+
+RUN apt update && apt install -y \
+    git \
+    curl \
+    openssh-client \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /workspace
+
+CMD ["sleep", "infinity"]
+
